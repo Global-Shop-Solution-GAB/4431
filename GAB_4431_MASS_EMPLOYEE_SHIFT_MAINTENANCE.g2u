@@ -1,0 +1,824 @@
+Program.Sub.ScreenSU.Start
+Gui.F_ShiftRotation..create
+Gui.F_ShiftRotation..caption("Mass Employee Shift Maintenance")
+Gui.F_ShiftRotation..size(17175,10500)
+Gui.F_ShiftRotation..minx(0)
+Gui.F_ShiftRotation..miny(0)
+Gui.F_ShiftRotation..position(0,0)
+Gui.F_ShiftRotation..event(UnLoad,f_shiftrotation_unload)
+Gui.F_ShiftRotation..alwaysontop(False)
+Gui.F_ShiftRotation..fontname("Arial")
+Gui.F_ShiftRotation..fontsize(9)
+Gui.F_ShiftRotation..forecolor(0)
+Gui.F_ShiftRotation..fontstyle(False,False,False,False)
+Gui.F_ShiftRotation..BackColor(-2147483633)
+Gui.F_ShiftRotation..controlbox(True)
+Gui.F_ShiftRotation..maxbutton(True)
+Gui.F_ShiftRotation..minbutton(True)
+Gui.F_ShiftRotation..mousepointer(0)
+Gui.F_ShiftRotation..moveable(True)
+Gui.F_ShiftRotation..sizeable(False)
+Gui.F_ShiftRotation..ShowInTaskBar(True)
+Gui.F_ShiftRotation..titlebar(True)
+Gui.F_ShiftRotation.frameWeekly.create(frame)
+Gui.F_ShiftRotation.frameWeekly.caption("Weekly Shift")
+Gui.F_ShiftRotation.frameWeekly.size(10830,4875)
+Gui.F_ShiftRotation.frameWeekly.position(120,75)
+Gui.F_ShiftRotation.frameWeekly.visible(True)
+Gui.F_ShiftRotation.frameWeekly.fontname("Arial")
+Gui.F_ShiftRotation.frameWeekly.fontsize(9)
+Gui.F_ShiftRotation.lbl1.create(label,"Shift",True,480,255,1,135,330,True,0,Arial,9,-2147483633,0)
+Gui.F_ShiftRotation.lbl1.parent("frameWeekly")
+Gui.F_ShiftRotation.lbl1.defaultvalue("")
+Gui.F_ShiftRotation.lbl1.controlgroup(0)
+Gui.F_ShiftRotation.lbl2.create(label,"Dept.",True,480,255,1,645,330,True,0,Arial,9,-2147483633,0)
+Gui.F_ShiftRotation.lbl2.parent("frameWeekly")
+Gui.F_ShiftRotation.lbl2.defaultvalue("")
+Gui.F_ShiftRotation.lbl2.controlgroup(0)
+Gui.F_ShiftRotation.lbl3.create(label,"Group",True,810,255,1,1500,315,True,0,Arial,9,-2147483633,0)
+Gui.F_ShiftRotation.lbl3.parent("frameWeekly")
+Gui.F_ShiftRotation.lbl3.defaultvalue("")
+Gui.F_ShiftRotation.lbl3.controlgroup(0)
+Gui.F_ShiftRotation.txtShiftW.create(textbox,"",True,360,315,0,150,540,True,2,Arial,9,-2147483643,1)
+Gui.F_ShiftRotation.txtShiftW.parent("frameWeekly")
+Gui.F_ShiftRotation.txtShiftW.defaultvalue("")
+Gui.F_ShiftRotation.txtShiftW.controlgroup(0)
+Gui.F_ShiftRotation.txtShiftW.Locked(True)
+Gui.F_ShiftRotation.txtDeptW.create(textbox,"",True,750,315,0,645,540,True,0,Arial,9,-2147483643,1)
+Gui.F_ShiftRotation.txtDeptW.parent("frameWeekly")
+Gui.F_ShiftRotation.txtDeptW.defaultvalue("")
+Gui.F_ShiftRotation.txtDeptW.controlgroup(0)
+Gui.F_ShiftRotation.txtDeptW.Locked(True)
+Gui.F_ShiftRotation.txtGroupW.create(textbox,"",True,1305,315,0,1500,540,True,0,Arial,9,-2147483643,1)
+Gui.F_ShiftRotation.txtGroupW.parent("frameWeekly")
+Gui.F_ShiftRotation.txtGroupW.defaultvalue("")
+Gui.F_ShiftRotation.txtGroupW.controlgroup(0)
+Gui.F_ShiftRotation.txtGroupW.Locked(True)
+Gui.F_ShiftRotation.cmdBrowseW.create(button)
+Gui.F_ShiftRotation.cmdBrowseW.caption("^")
+Gui.F_ShiftRotation.cmdBrowseW.visible(True)
+Gui.F_ShiftRotation.cmdBrowseW.size(435,435)
+Gui.F_ShiftRotation.cmdBrowseW.zorder(0)
+Gui.F_ShiftRotation.cmdBrowseW.position(2970,435)
+Gui.F_ShiftRotation.cmdBrowseW.enabled(True)
+Gui.F_ShiftRotation.cmdBrowseW.parent("frameWeekly")
+Gui.F_ShiftRotation.cmdBrowseW.fontname("Arial")
+Gui.F_ShiftRotation.cmdBrowseW.fontsize(9)
+Gui.F_ShiftRotation.cmdBrowseW.event(Click,cmd_browse_click)
+Gui.F_ShiftRotation.cmdBrowseW.defaultvalue("")
+Gui.F_ShiftRotation.cmdBrowseW.controlgroup(0)
+Gui.F_ShiftRotation.GsGCDays.Create(GsGridControl)
+Gui.F_ShiftRotation.GsGCDays.Size(3255,2745)
+Gui.F_ShiftRotation.GsGCDays.Position(150,1335)
+Gui.F_ShiftRotation.GsGCDays.Parent("frameWeekly")
+Gui.F_ShiftRotation.chk1.create(checkbox)
+Gui.F_ShiftRotation.chk1.caption("Delete Un-selected Days")
+Gui.F_ShiftRotation.chk1.visible(True)
+Gui.F_ShiftRotation.chk1.size(3060,255)
+Gui.F_ShiftRotation.chk1.zorder(0)
+Gui.F_ShiftRotation.chk1.position(150,975)
+Gui.F_ShiftRotation.chk1.enabled(True)
+Gui.F_ShiftRotation.chk1.alignment(0)
+Gui.F_ShiftRotation.chk1.fontname("Arial")
+Gui.F_ShiftRotation.chk1.fontsize(9)
+Gui.F_ShiftRotation.chk1.defaultvalue("")
+Gui.F_ShiftRotation.chk1.controlgroup(0)
+Gui.F_ShiftRotation.chk1.Parent("frameWeekly")
+Gui.F_ShiftRotation.cmdProcess.create(button)
+Gui.F_ShiftRotation.cmdProcess.caption("Process")
+Gui.F_ShiftRotation.cmdProcess.visible(True)
+Gui.F_ShiftRotation.cmdProcess.size(1575,570)
+Gui.F_ShiftRotation.cmdProcess.zorder(0)
+Gui.F_ShiftRotation.cmdProcess.position(135,4230)
+Gui.F_ShiftRotation.cmdProcess.enabled(True)
+Gui.F_ShiftRotation.cmdProcess.fontname("Arial")
+Gui.F_ShiftRotation.cmdProcess.fontsize(9)
+Gui.F_ShiftRotation.cmdProcess.event(Click,cmd_process_click)
+Gui.F_ShiftRotation.cmdProcess.defaultvalue("")
+Gui.F_ShiftRotation.cmdProcess.controlgroup(0)
+Gui.F_ShiftRotation.cmdProcess.Parent("frameWeekly")
+Gui.F_ShiftRotation.lbl4.create(label,"List of Employees",True,1935,255,1,3600,300,True,0,Arial,9,-2147483633,0)
+Gui.F_ShiftRotation.lbl4.defaultvalue("")
+Gui.F_ShiftRotation.lbl4.controlgroup(0)
+Gui.F_ShiftRotation.lbl4.Parent("frameWeekly")
+Gui.F_ShiftRotation.GsGCEmployee.Create(GsGridControl)
+Gui.F_ShiftRotation.GsGCEmployee.Size(7080,4230)
+Gui.F_ShiftRotation.GsGCEmployee.Position(3615,525)
+Gui.F_ShiftRotation.GsGCEmployee.Parent("frameWeekly")
+Gui.F_ShiftRotation.lbl5.create(label,"Employee Shift Summary",True,2475,255,1,120,5280,True,0,Arial,9,-2147483633,0)
+Gui.F_ShiftRotation.lbl5.defaultvalue("")
+Gui.F_ShiftRotation.lbl5.controlgroup(0)
+Gui.F_ShiftRotation.GsGCSummary.Create(GsGridControl)
+Gui.F_ShiftRotation.GsGCSummary.Size(16725,4515)
+Gui.F_ShiftRotation.GsGCSummary.Position(120,5490)
+Gui.F_ShiftRotation.frameSwap.Create(Frame)
+Gui.F_ShiftRotation.frameSwap.Size(5025,2835)
+Gui.F_ShiftRotation.frameSwap.Position(11850,75)
+Gui.F_ShiftRotation.frameSwap.Caption("Shift Swap")
+Gui.F_ShiftRotation.frameSwap.FontSize(9)
+Gui.F_ShiftRotation.frame1.Create(Frame)
+Gui.F_ShiftRotation.frame1.Size(3480,1005)
+Gui.F_ShiftRotation.frame1.Position(105,270)
+Gui.F_ShiftRotation.frame1.Parent("frameSwap")
+Gui.F_ShiftRotation.frame1.Caption("Shift 1")
+Gui.F_ShiftRotation.frame1.FontSize(9)
+Gui.F_ShiftRotation.txtShiftS1.Create(TextBox,"",True,360,315,0,150,540,True,0,"Arial",9,-2147483643,1)
+Gui.F_ShiftRotation.txtShiftS1.Parent("frame1")
+Gui.F_ShiftRotation.txtShiftS1.Locked(True)
+Gui.F_ShiftRotation.lbl6.Create(Label,"Shift",True,525,255,0,105,315,True,0,"Arial",9,-2147483633,0)
+'Gui.F_ShiftRotation.lbl6.Create(Label,"Shift",True,555,255,0,105,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_ShiftRotation.lbl6.Parent("frame1")
+Gui.F_ShiftRotation.lbl6.Parent("frame2")
+Gui.F_ShiftRotation.lbl7.Create(Label,"Dept",True,615,255,0,630,315,True,0,"Arial",9,-2147483633,0)
+'Gui.F_ShiftRotation.lbl7.Create(Label,"Dept",True,720,255,0,630,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_ShiftRotation.lbl7.Parent("frame1")
+Gui.F_ShiftRotation.lbl7.Parent("frame2")
+Gui.F_ShiftRotation.lbl8.Create(Label,"Group",True,1050,255,0,1440,315,True,0,"Arial",9,-2147483633,0)
+'Gui.F_ShiftRotation.lbl8.Create(Label,"Group",True,1050,255,0,1440,315,True,0,"Arial",9,-2147483633,0)
+Gui.F_ShiftRotation.lbl8.Parent("frame1")
+Gui.F_ShiftRotation.lbl8.Parent("frame2")
+Gui.F_ShiftRotation.txtDeptS1.Create(TextBox,"",True,750,315,0,645,540,True,0,"Arial",9,-2147483643,1)
+Gui.F_ShiftRotation.txtDeptS1.Parent("frame1")
+Gui.F_ShiftRotation.txtDeptS1.Locked(True)
+Gui.F_ShiftRotation.txtGroupS1.Create(TextBox,"",True,1305,315,0,1485,540,True,0,"Arial",9,-2147483643,1)
+Gui.F_ShiftRotation.txtGroupS1.Parent("frame1")
+Gui.F_ShiftRotation.cmdBrowseS1.Create(Button)
+Gui.F_ShiftRotation.cmdBrowseS1.Size(435,435)
+Gui.F_ShiftRotation.cmdBrowseS1.Position(2865,435)
+Gui.F_ShiftRotation.cmdBrowseS1.Parent("frame1")
+Gui.F_ShiftRotation.cmdBrowseS1.Caption("^")
+Gui.F_ShiftRotation.cmdBrowseS1.FontSize(9)
+Gui.F_ShiftRotation.cmdBrowseS1.Event(Click,cmdBrowseS1_Click)
+Gui.F_ShiftRotation.frame2.Create(Frame)
+Gui.F_ShiftRotation.frame2.Size(3480,1005)
+Gui.F_ShiftRotation.frame2.Position(105,1500)
+Gui.F_ShiftRotation.frame2.Parent("frameSwap")
+Gui.F_ShiftRotation.frame2.Caption("Shift 2")
+Gui.F_ShiftRotation.frame2.FontSize(9)
+Gui.F_ShiftRotation.txtShiftS2.Create(TextBox,"",True,360,315,0,150,540,True,0,"Arial",9,-2147483643,1)
+Gui.F_ShiftRotation.txtShiftS2.Parent("frame2")
+Gui.F_ShiftRotation.txtDeptS2.Create(TextBox,"",True,750,315,0,645,540,True,0,"Arial",9,-2147483643,1)
+Gui.F_ShiftRotation.txtDeptS2.Parent("frame2")
+Gui.F_ShiftRotation.txtGroupS2.Create(TextBox,"",True,1305,315,0,1485,540,True,0,"Arial",9,-2147483643,1)
+Gui.F_ShiftRotation.txtGroupS2.Parent("frame2")
+Gui.F_ShiftRotation.cmdBrowseS2.Create(Button)
+Gui.F_ShiftRotation.cmdBrowseS2.Size(435,435)
+Gui.F_ShiftRotation.cmdBrowseS2.Position(2865,435)
+Gui.F_ShiftRotation.cmdBrowseS2.Parent("frame2")
+Gui.F_ShiftRotation.cmdBrowseS2.Caption("^")
+Gui.F_ShiftRotation.cmdBrowseS2.FontSize(9)
+Gui.F_ShiftRotation.cmdBrowseS2.Event(Click,cmdBrowseS2_Click)
+Gui.F_ShiftRotation.cmdSwap.Create(Button)
+Gui.F_ShiftRotation.cmdSwap.Size(1200,450)
+Gui.F_ShiftRotation.cmdSwap.Position(3705,1185)
+Gui.F_ShiftRotation.cmdSwap.Parent("frameSwap")
+Gui.F_ShiftRotation.cmdSwap.Caption("Swap")
+Gui.F_ShiftRotation.cmdSwap.FontSize(9)
+Gui.F_ShiftRotation.cmdSwap.Event(Click,cmdSwap_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sIconPath.Declare(String)
+V.Local.sLabel.Declare(String)
+
+F.Intrinsic.String.Concat(V.Caller.GlobalDir,"\ART\gss2.ico",V.Local.sIconPath)
+Gui.F_ShiftRotation..Icon(V.Local.sIconPath)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+F.Intrinsic.Control.CallSub(Gsfgdays_style)
+F.Intrinsic.Control.CallSub(Gsfgemployee_style)
+
+'Load summary flexgrid with existing records in EMPLOYEE_SHIFT
+F.Intrinsic.Control.CallSub(Loadsummary)
+
+Gui.F_ShiftRotation..Show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: INA_MASS_EMPLOYEE_SHIFT.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+Program.Sub.f_shiftrotation_unload.Start
+F.Intrinsic.Control.SetErrorHandler("f_shiftrotation_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Data.DataTable.Close("dtEmployee")
+F.Data.DataTable.Close("dtDays")
+F.Intrinsic.Control.If(V.DataTable.dtSummary.Exists,=,True)
+	F.Data.DataTable.Close("dtSummary")
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_shiftrotation_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: INA_MASS_EMPLOYEE_SHIFT.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.f_shiftrotation_unload.End
+
+Program.Sub.gsfgDays_style.Start
+F.Intrinsic.Control.SetErrorHandler("gsfgdays_style_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.i1.Declare
+
+F.Data.DataTable.Create("dtDays",True)
+F.Data.DataTable.AddColumn("dtDays","No","Long")
+F.Data.DataTable.AddColumn("dtDays","Day","String")
+F.Data.DataTable.AddColumn("dtDays","Check","Boolean")
+F.Data.DataTable.AddRow("dtDays","No",1,"Day","Monday","Check",False)
+F.Data.DataTable.AddRow("dtDays","No",2,"Day","Tuesday","Check",False)
+F.Data.DataTable.AddRow("dtDays","No",3,"Day","Wednesday","Check",False)
+F.Data.DataTable.AddRow("dtDays","No",4,"Day","Thursday","Check",False)
+F.Data.DataTable.AddRow("dtDays","No",5,"Day","Friday","Check",False)
+F.Data.DataTable.AddRow("dtDays","No",6,"Day","Saturday","Check",False)
+F.Data.DataTable.AddRow("dtDays","No",7,"Day","Sunday","Check",False)
+
+Gui.F_ShiftRotation.GsGCDays.AddGridviewFromDatatable("gvDays","dtDays")
+Gui.F_ShiftRotation.GsGCDays.MainView("gvDays")
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","Check","ShowCaption",False)
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","No","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","Day","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","No","CellHAlignment","Center")
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","No","MinWidth","50")
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","Day","MinWidth","100")
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","Check","MinWidth","40")
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","Check","ReadOnly",False)
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","Check","AllowEdit",True)
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","No","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","Day","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","No","CellFontSize","9")
+Gui.F_ShiftRotation.GsGCDays.SetColumnProperty("gvDays","Day","CellFontSize","9")
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtDays.RowCount--,2)
+	Gui.F_ShiftRotation.GsGCDays.SetRowAppearance("gvDays",V.Local.i1,"backcolor","aliceblue")
+F.Intrinsic.Control.Next(V.Local.i1)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gsfgdays_style_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: INA_MASS_EMPLOYEE_SHIFT.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.gsfgDays_style.End
+
+Program.Sub.gsfgEmployee_style.Start
+F.Intrinsic.Control.SetErrorHandler("gsfgemployee_style_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.i1.Declare
+
+'Load employee list from employee master
+F.Data.DataTable.CreateFromSQL("dtEmployee","Conx","SELECT Employee as ID, Name FROM EMPLOYEE_MSTR WHERE DATE_TERMINATION = '000000' ORDER BY EMPLOYEE",True)
+F.Intrinsic.Control.If(V.DataTable.dtEmployee.RowCount,=,0)
+	F.Intrinsic.UI.Msgbox("No employee has been setup","INA_MASS_EMPLOYEE_SHIFT")
+	F.Intrinsic.Control.CallSub(f_shiftrotation_unload)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.AddColumn("dtEmployee","Check","Boolean")
+F.Data.DataTable.SetValue("dtEmployee",-1,"Check",False)
+Gui.F_ShiftRotation.GsGCEmployee.AddGridviewFromDatatable("gvEmp","dtEmployee")
+Gui.F_ShiftRotation.GsGCEmployee.MainView("gvEmp")
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","Check","ShowCaption",False)
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","Name","Caption","Name")
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","ID","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","Name","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","ID","CellHAlignment","Center")
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","Check","ReadOnly",False)
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","Check","AllowEdit",True)
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","ID","MinWidth","70")
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","Name","MinWidth","250")
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","Check","MinWidth","70")
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","ID","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","Name","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","ID","CellFontSize","9")
+Gui.F_ShiftRotation.GsGCEmployee.SetColumnProperty("gvEmp","Name","CellFontSize","9")
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtEmployee.RowCount--,2)
+	Gui.F_ShiftRotation.GsGCEmployee.SetRowAppearance("gvEmp",V.Local.i1,"backcolor","aliceblue")
+F.Intrinsic.Control.Next(V.Local.i1)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gsfgemployee_style_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: INA_MASS_EMPLOYEE_SHIFT.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.gsfgEmployee_style.End
+
+Program.Sub.LoadSummary.Start
+F.Intrinsic.Control.SetErrorHandler("LoadSummary_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.i1.Declare(Long)
+V.Local.i2.Declare
+V.Local.iRet.Declare(Long)
+
+V.Local.sFilter.Declare
+V.Local.sQuery.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sShift.Declare(String)
+
+Gui.F_ShiftRotation.GsGCSummary.visible(False)
+F.Intrinsic.UI.InvokeWaitDialog("Loading Employee Shift.....","INA_MASS_EMPLOYEE_SHIFT")
+
+F.Intrinsic.Control.If(V.DataTable.dtSummary.Exists,=,True)
+	F.Data.DataTable.Close("dtSummary")
+F.Intrinsic.Control.EndIf
+
+'-SS 9/23/21 edited the following select statment to include the where... in... so that we dont pull any lines for terminated employees.
+'Load employee from employee shift
+F.Data.DataTable.CreateFromSQL("dtSummary","Conx","SELECT DISTINCT EMPLOYEE as ID FROM EMPLOYEE_SHIFT where Employee in (select Employee from EMPLOYEE_MSTR where DATE_TERMINATION = '000000') ORDER BY EMPLOYEE",True)
+F.Data.DataTable.AddColumn("dtSummary","Name","String")
+F.Data.DataTable.AddColumn("dtSummary","Monday","String")
+F.Data.DataTable.AddColumn("dtSummary","Tuesday","String")
+F.Data.DataTable.AddColumn("dtSummary","Wednesday","String")
+F.Data.DataTable.AddColumn("dtSummary","Thursday","String")
+F.Data.DataTable.AddColumn("dtSummary","Friday","String")
+F.Data.DataTable.AddColumn("dtSummary","Saturday","String")
+F.Data.DataTable.AddColumn("dtSummary","Sunday","String")
+F.Intrinsic.Control.If(V.DataTable.dtSummary.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtSummary.RowCount--,1)
+		'Retrieve Employee name
+		F.Intrinsic.String.Build("ID = '{0}'",V.DataTable.dtSummary(V.Local.i1).ID!FieldValTrim,V.Local.sFilter)
+		F.Data.DataTable.Select("dtEmployee",V.Local.sFilter,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			F.Data.DataTable.SetValue("dtSummary",V.Local.i1,"Name",V.DataTable.dtEmployee(V.Local.sRet(0)).Name!FieldValTrim)
+		F.Intrinsic.Control.EndIf
+		
+		'Retrieve employee weekly shift
+		F.Intrinsic.String.Concat("SELECT Day, Shift, Dept, F_GROUP as SGroup FROM EMPLOYEE_SHIFT WHERE EMPLOYEE = '",V.DataTable.dtSummary(V.Local.i1).ID!FieldValTrim,"' ORDER BY DAY",V.Local.sQuery)
+		F.Data.DataTable.CreateFromSQL("dtShift","Conx",V.Local.sQuery,True)
+		F.Intrinsic.Control.For(V.Local.i2,0,V.DataTable.dtShift.RowCount--,1)
+			V.Local.sShift.Set(V.DataTable.dtShift(V.Local.i2).Shift!FieldValTrim)
+			F.Intrinsic.Control.If(V.DataTable.dtShift(V.Local.i2).Dept!FieldValTrim,<>,"")
+				F.Intrinsic.Control.If(V.DataTable.dtShift(V.Local.i2).SGroup!FieldValTrim,<>,"")
+					F.Intrinsic.String.Concat(V.Local.sShift," - ",V.DataTable.dtShift(V.Local.i2).Dept!FieldValTrim," - ",V.DataTable.dtShift(V.Local.i2).SGroup!FieldValTrim,V.Local.sShift)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.Concat(V.Local.sShift," - ",V.DataTable.dtShift(V.Local.i2).Dept!FieldValTrim,V.Local.sShift)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.If(V.DataTable.dtShift(V.Local.i2).SGroup!FieldValTrim,<>,"")
+					F.Intrinsic.String.Concat(V.Local.sShift," - N/A - ",V.DataTable.dtShift(V.Local.i2).SGroup!FieldValTrim,V.Local.sShift)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			
+			'Place the combined text field into the correct shift days
+			F.Intrinsic.String.Build("No = {0}",V.DataTable.dtShift(V.Local.i2).Day!FieldValLong,V.Local.sFilter)
+			F.Data.DataTable.Select("dtDays",V.Local.sFilter,V.Local.sRet)
+			F.Data.DataTable.SetValue("dtSummary",V.Local.i1,V.DataTable.dtDays(V.Local.sRet).Day!FieldValTrim,V.Local.sShift.Trim)
+		F.Intrinsic.Control.Next(V.Local.i2)
+		F.Data.DataTable.Close("dtShift")
+	F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+Gui.F_ShiftRotation.GsGCSummary.AddGridviewFromDatatable("gvSum","dtSummary")
+Gui.F_ShiftRotation.GsGCSummary.MainView("gvSum")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","ID","Visible",False)
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Name","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Monday","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Tuesday","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Wednesday","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Thursday","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Friday","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Saturday","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Sunday","HeaderHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Monday","CellHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Tuesday","CellHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Wednesday","CellHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Thursday","CellHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Friday","CellHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Saturday","CellHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Sunday","CellHAlignment","Center")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Name","MinWidth","250")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Monday","MinWidth","120")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Tuesday","MinWidth","120")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Wednesday","MinWidth","120")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Thursday","MinWidth","120")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Friday","MinWidth","120")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Saturday","MinWidth","120")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Sunday","MinWidth","120")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Name","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Monday","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Tuesday","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Wednesday","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Thursday","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Friday","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Saturday","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Sunday","HeaderFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Name","CellFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Monday","CellFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Tuesday","CellFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Wednesday","CellFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Thursday","CellFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Friday","CellFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Saturday","CellFontSize","9")
+Gui.F_ShiftRotation.GsGCSummary.SetColumnProperty("gvSum","Sunday","CellFontSize","9")
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtSummary.RowCount--,2)
+	Gui.F_ShiftRotation.GsGCSummary.SetRowAppearance("gvSum",V.Local.i1,"backcolor","aliceblue")
+F.Intrinsic.Control.Next(V.Local.i1)
+
+F.Intrinsic.UI.CloseWaitDialog
+Gui.F_ShiftRotation.GsGCSummary.visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadSummary_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: INA_MASS_EMPLOYEE_SHIFT.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.LoadSummary.End
+
+Program.Sub.cmd_browse_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_browse_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.i1.Declare(Long)
+V.Local.iWidths.Declare(Long)
+
+V.Local.sFromAmtS.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sTitles.Declare(String)
+
+F.Intrinsic.String.Split("Shift*!*Department*!*Balancing Group","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("800*!*1000*!*1200","*!*",V.Local.iWidths)
+
+V.Local.sQuery.Set("SELECT SHIFT,DEPT,SHIFT_GROUP FROM LUNCH_SHIFT ORDER BY SHIFT, DEPT, SHIFT_GROUP")
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select a Shift","conx",V.Local.sQuery,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	
+	gui.F_ShiftRotation.txtShiftW.Text(V.Local.sRet(0).Trim)
+	gui.F_ShiftRotation.txtDeptW.Text(V.Local.sRet(1).Trim)
+	gui.F_ShiftRotation.txtGroupW.Text(V.Local.sRet(2).Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_browse_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: INA_MASS_EMPLOYEE_SHIFT.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_browse_click.End
+
+Program.Sub.cmd_process_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_process_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.bDelete.Declare(Boolean)
+V.Local.bValue.Declare(Boolean)
+
+V.Local.i1.Declare(Long)
+V.Local.i2.Declare(Long)
+V.Local.iKey.Declare(Long)
+
+V.Local.sDay.Declare(String)
+V.Local.sDays.Declare(String)
+V.Local.sDept.Declare(String)
+V.Local.sFilter.Declare
+V.Local.sGroup.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sRet1.Declare
+V.Local.sRet2.Declare
+V.Local.sShift.Declare(String)
+
+V.Local.sShift.Set(V.Screen.F_ShiftRotation!txtShiftW.Text)
+
+F.Data.DataTable.Select("dtDays","Check = True",V.Local.sRet1)
+F.Data.DataTable.Select("dtEmployee","Check = True",V.Local.sRet2)
+
+F.Intrinsic.Control.If(V.Local.sShift.Trim,<>,"")
+F.Intrinsic.Control.AndIf(V.Local.sRet1,<>,"***NORETURN***")
+F.Intrinsic.Control.AndIf(V.Local.sRet2,<>,"***NORETURN***")
+	F.Intrinsic.UI.InvokeWaitDialog("Processing the selections","INA_MASS_EMPLOYEE_MAINTENANCE")
+	
+	V.Local.sDept.Set(V.Screen.F_ShiftRotation!txtDeptW.Text)
+	V.Local.sGroup.Set(V.Screen.F_ShiftRotation!txtGroupW.Text)
+	V.Local.bDelete.Set(V.Screen.F_ShiftRotation!chk1.Value)
+		
+	'Get through the selected employees
+	F.Data.DataView.Create("dtEmployee","dvEmployee",22,"Check = True","ID ASC")
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataView.dtEmployee!dvEmployee.RowCount--,1)
+		F.Intrinsic.Control.If(V.DataView.dtEmployee!dvEmployee(V.Local.i1).Check!FieldVal,=,True)
+			'Get through the list of days and either create a new record, edit the current entry or delete the current entry
+			F.Intrinsic.Control.For(V.Local.i2,0,V.DataTable.dtDays.RowCount--,1)
+				F.Intrinsic.String.Concat("SELECT * FROM EMPLOYEE_SHIFT WHERE EMPLOYEE = '",V.DataView.dtEmployee!dvEmployee(V.Local.i1).ID!FieldValTrim,"' AND DAY = '",V.DataTable.dtDays(V.Local.i2).No!FieldValLong,"'",V.Local.sQuery)
+				F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+				'The day is selected
+				F.Intrinsic.Control.If(V.DataTable.dtDays(V.Local.i2).Check!FieldVal,=,True)
+					'No existing record, add a new one
+					F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+						F.Intrinsic.String.Build("insert into EMPLOYEE_SHIFT(employee, day, shift, dept, f_group, filler) values('{0}','{1}','{2}','{3}','{4}','')",V.DataView.dtEmployee!dvEmployee(V.Local.i1).ID!FieldValTrim,V.DataTable.dtDays(V.Local.i2).No!FieldValLong,V.Local.sShift.Trim,V.Local.sDept.Trim,V.Local.sGroup.Trim,V.Local.sQuery)
+					'Update existing record
+					F.Intrinsic.Control.Else
+						F.Intrinsic.String.Build("update EMPLOYEE_SHIFT set shift = '{2}', dept = '{3}', f_group = '{4}' where employee = '{0}' and day = '{1}'",V.DataView.dtEmployee!dvEmployee(V.Local.i1).ID!FieldValTrim,V.DataTable.dtDays(V.Local.i2).No!FieldValLong,V.Local.sShift.Trim,V.Local.sDept.Trim,V.Local.sGroup.Trim,V.Local.sQuery)
+					F.Intrinsic.Control.EndIf
+					F.ODBC.Connection!conx.Execute(V.Local.sQuery)
+				'The day is not selected
+				F.Intrinsic.Control.Else
+					'If there is an existing record, delete it
+					F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+					F.Intrinsic.Control.AndIf(V.Local.bDelete,=,True)
+						F.ODBC.conx!rst.Delete
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rst.Close
+			F.Intrinsic.Control.Next(V.Local.i2)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i1)
+	F.Data.DataView.Close("dtEmployee","dvEmployee")
+	'Reset the screen selections
+	gui.F_ShiftRotation.txtShiftW.Text("")
+	gui.F_ShiftRotation.txtDeptW.Text("")
+	gui.F_ShiftRotation.txtGroupW.Text("")
+	F.Data.DataTable.SetValue("dtDays",-1,"Check",False)
+	F.Data.DataTable.SetValue("dtEmployee",-1,"Check",False)
+	
+	'Reload the employee shift summary flexgrid
+	F.Intrinsic.Control.CallSub(Loadsummary)
+	F.Intrinsic.UI.CloseWaitDialog
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_process_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: INA_MASS_EMPLOYEE_SHIFT.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_process_click.End
+
+Program.Sub.cmdBrowseS1_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdBrowseS1_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.i1.Declare(Long)
+V.Local.iWidths.Declare(Long)
+
+V.Local.sFromAmtS.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sTitles.Declare(String)
+
+F.Intrinsic.String.Split("Shift*!*Department*!*Balancing Group","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("800*!*1000*!*1200","*!*",V.Local.iWidths)
+
+V.Local.sQuery.Set("SELECT SHIFT,DEPT,SHIFT_GROUP FROM LUNCH_SHIFT ORDER BY SHIFT, DEPT, SHIFT_GROUP")
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select a Shift","conx",V.Local.sQuery,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	
+	gui.F_ShiftRotation.txtShiftS1.Text(V.Local.sRet(0).Trim)
+	gui.F_ShiftRotation.txtDeptS1.Text(V.Local.sRet(1).Trim)
+	gui.F_ShiftRotation.txtGroupS1.Text(V.Local.sRet(2).Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdBrowseS1_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: INA_MASS_EMPLOYEE_SHIFT.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdBrowseS1_Click.End
+
+Program.Sub.cmdBrowseS2_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdBrowseS2_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.i1.Declare(Long)
+V.Local.iWidths.Declare(Long)
+
+V.Local.sFromAmtS.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sTitles.Declare(String)
+
+F.Intrinsic.String.Split("Shift*!*Department*!*Balancing Group","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("800*!*1000*!*1200","*!*",V.Local.iWidths)
+
+V.Local.sQuery.Set("SELECT SHIFT,DEPT,SHIFT_GROUP FROM LUNCH_SHIFT ORDER BY SHIFT, DEPT, SHIFT_GROUP")
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select a Shift","conx",V.Local.sQuery,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	
+	gui.F_ShiftRotation.txtShiftS2.Text(V.Local.sRet(0).Trim)
+	gui.F_ShiftRotation.txtDeptS2.Text(V.Local.sRet(1).Trim)
+	gui.F_ShiftRotation.txtGroupS2.Text(V.Local.sRet(2).Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdBrowseS2_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: INA_MASS_EMPLOYEE_SHIFT.g2c",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdBrowseS2_Click.End
+
+Program.Sub.cmdSwap_Click.Start
+V.Local.i1.Declare
+V.Local.i2.Declare
+V.Local.sColumn.Declare
+V.Local.sDept.Declare
+V.Local.sFilter.Declare
+V.Local.sGroup.Declare
+V.Local.sQuery.Declare
+V.Local.sRet.Declare
+V.Local.sShift.Declare
+V.Local.sShift1.Declare
+V.Local.sShift2.Declare
+
+V.Local.sShift1.Set(V.Screen.F_ShiftRotation!txtShiftS1.Text)
+V.Local.sDept.Set(V.Screen.F_ShiftRotation!txtDeptS1.Text)
+V.Local.sGroup.Set(V.Screen.F_ShiftRotation!txtGroupS1.Text)
+'Shift1 is not selected
+F.Intrinsic.Control.If(V.Local.sShift1.Trim,=,"")
+F.Intrinsic.Control.AndIf(V.Local.sDept.Trim,=,"")
+F.Intrinsic.Control.AndIf(V.Local.sGroup.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Please select Shift From to proceed with swap","INA_MASS_EMPLOYEE_SHIFT")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Local.sDept.Trim,<>,"")
+		F.Intrinsic.Control.If(V.Local.sGroup.Trim,<>,"")
+			F.Intrinsic.String.Build("{0} - {1} - {2}",V.Local.sShift1.Trim,V.Local.sDept.Trim,V.Local.sGroup.Trim,V.Local.sShift1)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0} - {1}",V.Local.sShift1.Trim,V.Local.sDept.Trim,V.Local.sShift1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.sGroup.Trim,<>,"")
+			F.Intrinsic.String.Build("{0} - N/A - {1}",V.Local.sShift1.Trim,V.Local.sGroup.Trim,V.Local.sShift1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+V.Local.sShift2.Set(V.Screen.F_ShiftRotation!txtShiftS2.Text)
+V.Local.sDept.Set(V.Screen.F_ShiftRotation!txtDeptS2.Text)
+V.Local.sGroup.Set(V.Screen.F_ShiftRotation!txtGroupS2.Text)
+'Shift2 is not selected
+F.Intrinsic.Control.If(V.Local.sShift2.Trim,=,"")
+F.Intrinsic.Control.AndIf(V.Local.sDept.Trim,=,"")
+F.Intrinsic.Control.AndIf(V.Local.sGroup.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Please select Shift To to proceed with swap","INA_MASS_EMPLOYEE_SHIFT")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Local.sDept.Trim,<>,"")
+		F.Intrinsic.Control.If(V.Local.sGroup.Trim,<>,"")
+			F.Intrinsic.String.Build("{0} - {1} - {2}",V.Local.sShift2.Trim,V.Local.sDept.Trim,V.Local.sGroup.Trim,V.Local.sShift2)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0} - {1}",V.Local.sShift2.Trim,V.Local.sDept.Trim,V.Local.sShift2)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.sGroup.Trim,<>,"")
+			F.Intrinsic.String.Build("{0} - N/A - {1}",V.Local.sShift2.Trim,V.Local.sGroup.Trim,V.Local.sShift2)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'Selected shifts are the same
+F.Intrinsic.Control.If(V.Local.sShift1.Trim,=,V.Local.sShift2.Trim)
+	F.Intrinsic.UI.Msgbox("Selected shifts for swap cannot be the same","INA_MASS_EMPLOYEE_SHIFT")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.InvokeWaitDialog("Swapping the shifts","INA_MASS_EMPLOYEE_SHIFT")
+Gui.F_ShiftRotation.GsGCSummary.visible(False)
+
+'Change the changes for each day
+F.Intrinsic.Control.For(V.Local.i1,1,7,1)
+	'Prepare data tables for swapping shifts
+	F.Data.DataTable.Create("dtShift1",True)
+	F.Data.DataTable.AddColumn("dtShift1","ID","String")
+	
+	F.Data.DataTable.Create("dtShift2",True)
+	F.Data.DataTable.AddColumn("dtShift2","ID","String")
+	
+	F.Intrinsic.String.Build("No = {0}",V.Local.i1,V.Local.sFilter)
+	F.Data.DataTable.Select("dtDays",V.Local.sFilter,V.Local.sRet)
+	V.Local.sColumn.Set(V.DataTable.dtDays(V.Local.sRet).Day!FieldValTrim)
+	
+	'Fill up the swap datatables (dtShift1 and dtShift2)
+	F.Intrinsic.String.Build("{0} = '{1}'",V.Local.sColumn.trim,V.Local.sShift1.Trim,V.Local.sFilter)
+	F.Data.DataTable.Select("dtSummary",V.Local.sFilter,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.Control.For(V.Local.i2,0,V.Local.sRet.UBound,1)
+			F.Data.DataTable.AddRow("dtShift1","ID",V.DataTable.dtSummary(V.Local.sRet(V.Local.i2)).ID!FieldValTrim)
+		F.Intrinsic.Control.Next(V.Local.i2)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("{0} = '{1}'",V.Local.sColumn.trim,V.Local.sShift2.Trim,V.Local.sFilter)
+	F.Data.DataTable.Select("dtSummary",V.Local.sFilter,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.Control.For(V.Local.i2,0,V.Local.sRet.UBound,1)
+			F.Data.DataTable.AddRow("dtShift2","ID",V.DataTable.dtSummary(V.Local.sRet(V.Local.i2)).ID!FieldValTrim)
+		F.Intrinsic.Control.Next(V.Local.i2)
+	F.Intrinsic.Control.EndIf
+
+	'If there are data in dtShift1, update the shift
+	F.Intrinsic.Control.If(V.DataTable.dtShift1.RowCount,>,0)
+		F.Intrinsic.Control.For(V.Local.i2,0,V.DataTable.dtShift1.RowCount--,1)
+			F.Intrinsic.String.Concat("SELECT SHIFT,DEPT,F_GROUP FROM EMPLOYEE_SHIFT WHERE EMPLOYEE = '",V.DataTable.dtShift1(V.Local.i2).ID!FieldValTrim,"' AND DAY = ",V.Local.i1,V.Local.sQuery)
+			F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+			V.Local.sShift.Set(V.Screen.F_ShiftRotation!txtShiftS2.Text)
+			V.Local.sDept.Set(V.Screen.F_ShiftRotation!txtDeptS2.Text)
+			V.Local.sGroup.Set(V.Screen.F_ShiftRotation!txtGroupS2.Text)
+			F.ODBC.conx!rst.Set!SHIFT(V.Local.sShift.Trim)
+			F.ODBC.conx!rst.Set!DEPT(V.Local.sDept.Trim)
+			F.ODBC.conx!rst.Set!F_GROUP(V.Local.sGroup.Trim)
+			F.ODBC.conx!rst.Update
+			F.ODBC.conx!rst.Close
+		F.Intrinsic.Control.Next(V.Local.i2)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtShift2.RowCount,>,0)
+		F.Intrinsic.Control.For(V.Local.i2,0,V.DataTable.dtShift2.RowCount--,1)
+			F.Intrinsic.String.Concat("SELECT SHIFT,DEPT,F_GROUP FROM EMPLOYEE_SHIFT WHERE EMPLOYEE = '",V.DataTable.dtShift2(V.Local.i2).ID!FieldValTrim,"' AND DAY = ",V.Local.i1,V.Local.sQuery)
+			F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sQuery)
+			V.Local.sShift.Set(V.Screen.F_ShiftRotation!txtShiftS1.Text)
+			V.Local.sDept.Set(V.Screen.F_ShiftRotation!txtDeptS1.Text)
+			V.Local.sGroup.Set(V.Screen.F_ShiftRotation!txtGroupS1.Text)
+			F.ODBC.conx!rst.Set!SHIFT(V.Local.sShift.Trim)
+			F.ODBC.conx!rst.Set!DEPT(V.Local.sDept.Trim)
+			F.ODBC.conx!rst.Set!F_GROUP(V.Local.sGroup.Trim)
+			F.ODBC.conx!rst.Update
+			F.ODBC.conx!rst.Close
+		F.Intrinsic.Control.Next(V.Local.i2)
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("dtShift2")
+	F.Data.DataTable.Close("dtShift1")
+F.Intrinsic.Control.Next(V.Local.i1)
+
+F.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.CallSub(loadsummary)
+
+Gui.F_ShiftRotation.GsGCSummary.visible(True)
+Gui.F_ShiftRotation.txtDeptS1.Text("")
+Gui.F_ShiftRotation.txtDeptS2.Text("")
+Gui.F_ShiftRotation.txtGroupS1.Text("")
+Gui.F_ShiftRotation.txtGroupS2.Text("")
+Gui.F_ShiftRotation.txtShiftS1.Text("")
+Gui.F_ShiftRotation.txtShiftS2.Text("")
+Program.Sub.cmdSwap_Click.End
+
+Program.Sub.Comments.Start
+${$0$}$INA_SHIFT_ROTATION$}$MHERTANTO$}$2/3/2016$}$False
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$In PO Receipt (PUR100GI), the script prevents receipt quantity to be greater than open PO quantity.
+
+Created by: Maximilian Hertanto (31 Aug 2015)
+
+Hook No. 15030 (Pre-save Hook)
+Program.Sub.Comments.End
+
